@@ -1,0 +1,7 @@
+{
+  "type" : "object",
+  "properties" : {
+    "target" : { "$ref":"http://schemas.massisframework.com/simsilica/EntityId.json" }
+  },
+  "javaInterfaces" : [ "com.simsilica.es.EntityComponent" ]
+}

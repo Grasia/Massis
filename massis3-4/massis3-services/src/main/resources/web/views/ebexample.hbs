@@ -1,0 +1,89 @@
+<html>
+<head>
+<title></title>
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
+<script src="/api/assets/vertx-eventbus.js"></script>
+</head>
+
+<style>
+.news {
+	font-size: 20pt;
+}
+</style>
+
+<body>
+	<br>
+	<canvas id='canvas' height="320" width="320"></canvas>
+	<img id="camImage" src="#" />
+	<img src="http://localhost:8082/api/simulations/0/environment/camera/0/video"/>
+	<script>
+		var canvas = document.getElementById('canvas');
+		var ready = true;
+		HTMLCanvasElement.prototype.renderImage = function(imageData) {
+
+			if (!ready) {
+				console.log("not ready");
+				return;
+			}
+			ready = false;
+			var ctx = this.getContext('2d');
+			var img = new Image();
+			var blob = new Blob([ imageData ], {
+				type : "image/jpeg"
+			});
+			img.onload = function() {
+				ctx.drawImage(img, 0, 0);
+				console.log("ONLOAD: ");
+				ready = true;
+			}
+
+			img.src = URL.createObjectURL(blob);
+		};
+
+		var socket;
+
+		if (window.WebSocket) {
+			socket = new WebSocket("ws://localhost:8082/cameras");
+			socket.binaryType = "arraybuffer";
+			socket.onmessage = function(event) {
+
+				var arrayBuffer = event.data;
+				//queue.push(imageData)
+				canvas.renderImage(arrayBuffer);
+
+				var blob = new Blob([ arrayBuffer ], {
+	                type : "image/jpeg"
+	            });
+				var reader = new FileReader();
+				reader.onloadend = function() {
+					var image = document.getElementById('camImage');
+					image.src = "data:image/jpeg;base64,"+window.btoa(reader.result);
+				};
+				reader.readAsBinaryString(blob);
+
+			}
+			socket.onopen = function(event) {
+				send("ping");
+				console.log("Web Socket opened!");
+			};
+			socket.onclose = function(event) {
+				console.log("Web Socket closed.");
+			};
+		} else {
+			alert("Your browser does not support Websockets. (Use Chrome)");
+		}
+		function send(message) {
+			if (!window.WebSocket) {
+				return;
+			}
+			if (socket.readyState == WebSocket.OPEN) {
+				socket.send(message);
+			} else {
+				alert("The socket is not open.");
+			}
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>massis3</artifactId>
+    <groupId>com.massisframework.massis3</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.massisframework.massis3.jme3</groupId>
+  <artifactId>massis3-jme3</artifactId>
+  <properties>
+    <jme.version>3.1.0-stable</jme.version>
+    <jfx.version>2.184.2016-04-30_145140-ccbd413</jfx.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <zay-es.version>1.2.1</zay-es.version>
+  </properties>
+</project>
+

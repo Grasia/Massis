@@ -1,0 +1,19 @@
+(
+	(C C1
+		(elements
+			((aa hh))
+		)
+	)
+	(C C2
+		(elements
+			((A (trigger ((aaa true ==))) com.massisframework.massis3.sposh.actions.LogAction))
+		)
+	)
+	(AP hh (com.massisframework.massis3.sposh.actions.SetVariable($value="Hola",$varName="$HH") C2 cz.cuni.amis.pogamut.sposh.executor.DoNothing))
+
+	(DC life
+		(drives 
+			  ((AA (trigger ((cz.cuni.amis.pogamut.sposh.executor.Succeed true ==))) C1))
+		)
+	)
+)

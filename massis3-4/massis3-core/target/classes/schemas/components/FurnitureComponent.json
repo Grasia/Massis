@@ -1,0 +1,9 @@
+{
+  "type" : "object",
+  "properties" : {
+    "isDoorOrWindow" : {
+      "type" : "boolean"
+    }
+  },
+  "javaInterfaces" : [ "com.simsilica.es.EntityComponent" ]
+}

@@ -1,0 +1,165 @@
+
+@declare{'methodBody'}
+@code{hasParams = !method.params.isEmpty()}
+@code{lastParam = hasParams ? method.params.get(method.params.size() - 1) : null}
+@code{hasResultHandler=(lastParam != null) && (lastParam.type.kind == CLASS_HANDLER) && (lastParam.type.args[0].kind == CLASS_ASYNC_RESULT)}
+@code{count=0}
+System.out.println("aha");\n
+@end{}
+
+@declare{'startMethodTemplate'}
+  @POST\n
+  @Path("/@{method.name}")\n
+  public @if{method.typeParams.size() > 0}
+        <@foreach{typeVar:method.typeParams}@{typeVar}@end{', '}>
+     @end{}@{method.returnType.simpleName} @{method.name}(@foreach{param: method.params}@if{param.type.kind != CLASS_HANDLER}@QueryParam("@{param.name}") @{param.type.simpleName} @{param.name}@end{}@end{', '} @Suspended final AsyncResponse asyncResponse) {\n
+     this._service.@{method.name}(@foreach{param: method.params}@if{param.type.kind != CLASS_HANDLER}@{param.name}@end{}@end{', '} r->{\n
+        JsonObject response=new JsonObject();\n
+        if (r.failed()) {\n
+            response.put("status", "error");\n
+            response.put("message", r.cause().getMessage());\n
+            asyncResponse.resume(Response.status(Response.Status.BAD_REQUEST).entity(response.encode()).build());\n
+        }\n
+        else {\n
+            response.put("status", "success");\n
+            response.put("result", r.result());\n
+            asyncResponse.resume(Response.status(Response.Status.OK).entity(response.encode()).build());\n
+        }\n
+    });\n
+@end{}
+
+/*\n
+* Copyright 2014 Red Hat, Inc.\n
+*\n
+* Red Hat licenses this file to you under the Apache License, version 2.0\n
+* (the "License"); you may not use this file except in compliance with the\n
+* License. You may obtain a copy of the License at:\n
+*\n
+* http://www.apache.org/licenses/LICENSE-2.0\n
+*\n
+* Unless required by applicable law or agreed to in writing, software\n
+* distributed under the License is distributed on an "AS IS" BASIS, WITHOUT\n
+* WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the\n
+* License for the specific language governing permissions and limitations\n
+* under the License.\n
+*/\n\n
+package @{ifacePackageName};\n
+\n
+import javax.ws.rs.*;\n
+import javax.ws.rs.core.*;\n
+import javax.ws.rs.container.*;\n
+import @{ifaceFQCN};\n
+import io.vertx.core.eventbus.DeliveryOptions;\n
+import io.vertx.core.Vertx;\n
+import io.vertx.core.Future;\n
+import io.vertx.core.json.JsonObject;\n
+import io.vertx.core.json.JsonArray;\n
+import java.util.ArrayList;\n
+import java.util.HashSet;\n
+import java.util.List;\n
+import java.util.Map;\n
+import java.util.Set;\n
+import java.util.stream.Collectors;\n
+import java.util.function.Function;\n
+import io.vertx.serviceproxy.ProxyHelper;\n
+import io.vertx.serviceproxy.ServiceException;\n
+import io.vertx.serviceproxy.ServiceExceptionMessageCodec;\n
+@foreach{importedType:importedTypes}
+@if{!importedType.packageName.equals("java.lang")}
+import @{importedType};\n
+@end{}
+@end{}
+\n
+/*\n
+  Generated Proxy code - DO NOT EDIT\n
+  @author Roger the Robot\n
+*/\n
+@SuppressWarnings({"unchecked", "rawtypes"})\n
+public class @{ifaceSimpleName}HTTPVertxEBProxy<ST> {\n
+\n
+  private Vertx _vertx;\n
+  private String _address;\n
+  private @{ifaceSimpleName} _service;\n
+\n
+  public @{ifaceSimpleName}HTTPVertxEBProxy(Vertx vertx, String address) {\n
+    this._vertx = vertx;\n
+    this._address = address;\n
+    this._service=ProxyHelper.createProxy(@{ifaceSimpleName}.class, _vertx,_address);\n
+  }\n
+\n
+@foreach{method:methods}
+    @if{!method.staticMethod}
+  @includeNamed{'startMethodTemplate';method:method}\n
+    @if{!method.proxyIgnore}@includeNamed{'methodBody';method:method}@end{}
+    @if{method.fluent}
+    return this;\n
+    @end{}
+}\n\n
+@end{}
+@end{}
+
+\n
+
+  private List<Character> convertToListChar(JsonArray arr) {\n
+    List<Character> list = new ArrayList<>();\n
+    for (Object obj: arr) {\n
+      Integer jobj = (Integer)obj;\n
+      list.add((char)(int)jobj);\n
+    }\n
+    return list;\n
+  }\n\n
+
+  private Set<Character> convertToSetChar(JsonArray arr) {\n
+    Set<Character> set = new HashSet<>();\n
+    for (Object obj: arr) {\n
+      Integer jobj = (Integer)obj;\n
+      set.add((char)(int)jobj);\n
+    }\n
+    return set;\n
+  }\n\n
+
+  private <T> Map<String, T> convertMap(Map map) {\n
+    if (map.isEmpty()) { \n
+      return (Map<String, T>) map; \n
+    } \n
+     \n
+    Object elem = map.values().stream().findFirst().get(); \n
+    if (!(elem instanceof Map) && !(elem instanceof List)) { \n
+      return (Map<String, T>) map; \n
+    } else { \n
+      Function<Object, T> converter; \n
+      if (elem instanceof List) { \n
+        converter = object -> (T) new JsonArray((List) object); \n
+      } else { \n
+        converter = object -> (T) new JsonObject((Map) object); \n
+      } \n
+      return ((Map<String, T>) map).entrySet() \n
+       .stream() \n
+       .collect(Collectors.toMap(Map.Entry::getKey, converter::apply)); \n
+    } \n
+  }\n
+
+  private <T> List<T> convertList(List list) {\n
+    if (list.isEmpty()) { \n
+          return (List<T>) list; \n
+        } \n
+     \n
+    Object elem = list.get(0); \n
+    if (!(elem instanceof Map) && !(elem instanceof List)) { \n
+      return (List<T>) list; \n
+    } else { \n
+      Function<Object, T> converter; \n
+      if (elem instanceof List) { \n
+        converter = object -> (T) new JsonArray((List) object); \n
+      } else { \n
+        converter = object -> (T) new JsonObject((Map) object); \n
+      } \n
+      return (List<T>) list.stream().map(converter).collect(Collectors.toList()); \n
+    } \n
+  }\n
+
+  private <T> Set<T> convertSet(List list) {\n
+    return new HashSet<T>(convertList(list));\n
+  }\n
+
+}

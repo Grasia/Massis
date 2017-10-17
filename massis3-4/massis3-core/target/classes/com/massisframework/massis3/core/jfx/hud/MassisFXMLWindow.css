@@ -1,0 +1,98 @@
+.TitleBar {
+	-fx-background-color: #f8f8f8;
+	-fx-max-height: 30px;
+	-fx-min-height: 30px;
+}
+
+.titleLabel {
+	-fx-font-size: 20px;
+	-fx-text-fill: BLACK;
+}
+
+.background {
+	-fx-background-color: #f8f8f8;
+}
+
+.leftWindowBorder {
+	-fx-background-color: transparent;
+	-fx-max-width: 5px;
+	-fx-min-width: 5px;
+}
+
+.rightWindowBorder {
+	-fx-background-color: transparent;
+	-fx-max-width: 5px;
+	-fx-min-width: 5px;
+}
+
+.bottomWindowBorder {
+	-fx-background-color: transparent;
+	-fx-max-height: 5px;
+	-fx-min-height: 5px;
+}
+
+.topWindowBorder {
+	-fx-background-color: transparent;
+	-fx-max-height: 5px;
+	-fx-min-height: 5px;
+}
+
+.bottomRightWindowCorner {
+	-fx-background-color: transparent;
+	-fx-max-height: 5px;
+	-fx-max-width: 5px;
+	-fx-min-height: 5px;
+	-fx-min-width: 5px;
+}
+
+.bottomLeftWindowCorner {
+	-fx-background-color: transparent;
+	-fx-max-height: 5px;
+	-fx-max-width: 5px;
+	-fx-min-height: 5px;
+	-fx-min-width: 5px;
+}
+
+.topRightWindowCorner {
+	-fx-background-color: transparent;
+	-fx-max-height: 5px;
+	-fx-max-width: 5px;
+	-fx-min-height: 5px;
+	-fx-min-width: 5px;
+}
+
+.topLeftWindowCorner {
+	-fx-background-color: transparent;
+	-fx-max-height: 5px;
+	-fx-max-width: 5px;
+	-fx-min-height: 5px;
+	-fx-min-width: 5px;
+}
+
+.titleBarButtons {
+	
+}
+
+.maximizeButton {
+	-fx-background-color: transparent;
+	-fx-background-image: url("maximize.png");
+	-fx-background-size: 100%;
+	-fx-min-height: 25px;
+	-fx-min-width: 25px;
+}
+
+.closeButton {
+	-fx-background-color: transparent;
+	-fx-background-image: url("close.png");
+	-fx-background-size: 100%;
+	-fx-min-height: 25px;
+	-fx-min-width: 25px;
+}
+
+.externalizeButton {
+	-fx-background-color: transparent;
+	-fx-background-image: url("externalize.png");
+	-fx-background-size: 100%;
+	-fx-min-height: 25px;
+	-fx-min-width: 25px;
+}

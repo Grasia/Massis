@@ -1,0 +1,9 @@
+{
+  "type" : "object",
+  "properties" : {
+    "countdown" : {
+      "type" : "number"
+    }
+  },
+  "javaInterfaces" : [ "com.simsilica.es.EntityComponent" ]
+}

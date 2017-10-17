@@ -1,0 +1,9 @@
+(
+	(AP GoActionPattern (cz.cuni.amis.pogamut.sposh.executor.DoNothing))
+
+	(DC life
+		(drives 
+			  ((nothing GoActionPattern))
+		)
+	)
+)

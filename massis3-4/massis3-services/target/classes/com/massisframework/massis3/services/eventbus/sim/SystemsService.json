@@ -1,0 +1,83 @@
+{
+    "location": {
+        "endpoint": "UNKNOWN"
+    },
+    "metadata": {
+        "service.interface": "com.massisframework.massis3.services.eventbus.sim.SystemsService",
+        "actions": {
+                "getRunningSystems": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "array"
+                        }                                           
+                    }
+                }
+            },
+                "systemStatus": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "systemName": {
+                                "type": "string"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "boolean"
+                        }                                           
+                    }
+                }
+            },
+                "disableSystem": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "systemName": {
+                                "type": "string"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "boolean"
+                        }                                           
+                    }
+                }
+            },
+                "enableSystem": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "systemName": {
+                                "type": "string"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "boolean"
+                        }                                           
+                    }
+                }
+            }
+    }
+  },
+  "name" : "SystemsService",
+  "status" : "UNKNOWN",
+  "type" : "eventbus-service-proxy"
+
+}

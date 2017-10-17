@@ -1,0 +1,18 @@
+{
+	"type": "object",
+	"properties": {
+		"x": {
+			"type": "number"
+		},
+		"y": {
+			"type": "number"
+		},
+		"z": {
+			"type": "number"
+		}
+	},
+	"javaInterfaces": [
+		"com.simsilica.es.EntityComponent",
+		"com.massisframework.massis3.commons.spatials.Vector3fHolder"
+	]
+}

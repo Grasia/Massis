@@ -1,0 +1,80 @@
+{
+    "location": {
+        "endpoint": "UNKNOWN"
+    },
+    "metadata": {
+        "service.interface": "com.massisframework.massis3.services.eventbus.SimulationServerService",
+        "actions": {
+                "activeSimulations": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "array"
+                        }                                           
+                    }
+                }
+            },
+                "availableScenes": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "array"
+                        }                                           
+                    }
+                }
+            },
+                "create": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "sceneFile": {
+                                "type": "string"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "integer"
+                        }                                           
+                    }
+                }
+            },
+                "destroy": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "simId": {
+                                "type": "integer"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "null"
+                        }                                           
+                    }
+                }
+            }
+    }
+  },
+  "name" : "SimulationServerService",
+  "status" : "UNKNOWN",
+  "type" : "eventbus-service-proxy"
+
+}

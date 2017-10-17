@@ -1,0 +1,45 @@
+{
+    "type": "object",
+    "properties": {
+        "httpServerConfig": {
+            "$ref": "http://schemas.massisframework.com/massis3/server/http/config/Massis3HTTPServerConfig.json"
+        },
+        "authPropertiesFile": {
+            "type": "string",
+            "description": "Shiro authentication properties file path"
+        },
+        "assetFolders": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "instances": {
+            "type": "integer",
+            "default": 1
+        },
+        "renderMode": {
+            "type": "string",
+            "enum": [
+                "SERVER",
+                "DESKTOP",
+                "DEVELOPMENT"
+            ],
+            "default": "SERVER"
+        },
+        "rendererType": {
+            "type": "string",
+            "enum": [
+                "LWJGL-OpenGL3",
+                "LWJGL-OpenGL2"
+            ],
+            "default": "LWJGL-OpenGL3"
+        }
+    },
+    "required": [
+        "httpPort",
+        "assetFolders",
+        "authPropertiesFile"
+    ]
+}
+}

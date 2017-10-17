@@ -1,0 +1,40 @@
+= Cheatsheets
+
+[[GetCameraDataMessage]]
+== GetCameraDataMessage
+
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[camId]]`camId`|`String`|-
+|===
+
+[[JsonPoint]]
+== JsonPoint
+
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[x]]`x`|`Number (float)`|-
+|[[y]]`y`|`Number (float)`|-
+|[[z]]`z`|`Number (float)`|-
+|===
+
+[[JsonQuaternion]]
+== JsonQuaternion
+
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[w]]`w`|`Number (float)`|-
+|[[x]]`x`|`Number (float)`|-
+|[[y]]`y`|`Number (float)`|-
+|[[z]]`z`|`Number (float)`|-
+|===
+

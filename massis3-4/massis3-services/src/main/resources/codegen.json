@@ -1,0 +1,15 @@
+{
+  "name": "massis3-services-record-codegen",
+  "generators": [
+    {
+      "kind": "proxy",
+      "fileName": "'resources/'+ifaceFQCN.replace('.', '/')+'.json'",
+      "templateFileName": "serviceproxy/template/service-metadata.templ"
+    },
+     {
+      "kind": "proxy",
+      "fileName": "ifaceFQCN + 'TCPVertxEBProxy.java'",
+      "templateFileName": "serviceproxy/template/tcp-proxygen.templ"
+    }
+  ]
+}

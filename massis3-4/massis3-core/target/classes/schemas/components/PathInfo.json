@@ -1,0 +1,36 @@
+{
+  "type" : "object",
+  "properties" : {
+    "start" : {
+      "type" : "integer"
+    },
+    "end" : {
+      "type" : "integer"
+    },
+    "generatedPath" : {
+      "type" : "array",
+      "items" : {
+        "type" : "integer"
+      }
+    },
+    "midPointPath" : {
+      "type" : "array",
+      "items" : { "$ref": "http://schemas.massisframework.com/jme3/Vector3f.json" }
+    },
+    "cellIndex" : {
+      "type" : "integer"
+    },
+    "findPathResult" : {
+      "type" : "string",
+      "enum" : [ "COMPLETE_PATH_FOUND", "PARTIAL_PATH_FOUND", "NOT_FOUND" ]
+    },
+    "reached" : {
+      "type" : "boolean"
+    },
+    "funnel" : {
+      "type" : "array",
+      "items" : { "$ref": "http://schemas.massisframework.com/jme3/Vector3f.json" }
+    }
+  },
+  "javaInterfaces" : [ "com.simsilica.es.EntityComponent" ]
+}

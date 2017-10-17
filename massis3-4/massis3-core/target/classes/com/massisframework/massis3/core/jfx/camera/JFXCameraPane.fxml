@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.massisframework.massis3.core.jfx.camera.JFXCameraController">
+	<children>
+		<MenuBar VBox.vgrow="NEVER">
+			<menus>
+				<Menu mnemonicParsing="false" text="Options">
+					<items>
+						<MenuItem mnemonicParsing="false" text="New" />
+						<MenuItem mnemonicParsing="false" text="Open…" />
+						<Menu mnemonicParsing="false" text="Open Recent" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" text="Close" />
+						<MenuItem mnemonicParsing="false" text="Save" />
+						<MenuItem mnemonicParsing="false" text="Save As…" />
+						<MenuItem mnemonicParsing="false" text="Revert" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" text="Preferences…" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" text="Quit" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<AnchorPane cache="true" cacheHint="SPEED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="300.0" minWidth="400.0" VBox.vgrow="ALWAYS">
+			<children>
+				<ImageView fx:id="imageView" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
+			</children>
+		</AnchorPane>
+	</children>
+</VBox>

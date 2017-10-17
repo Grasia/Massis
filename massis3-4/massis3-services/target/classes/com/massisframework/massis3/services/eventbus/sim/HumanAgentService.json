@@ -1,0 +1,236 @@
+{
+    "location": {
+        "endpoint": "UNKNOWN"
+    },
+    "metadata": {
+        "service.interface": "com.massisframework.massis3.services.eventbus.sim.HumanAgentService",
+        "actions": {
+                "createHuman": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "location": {
+                                "type": "object"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "integer"
+                        }                                           
+                    }
+                }
+            },
+                "destroyHuman": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "humanId": {
+                                "type": "integer"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "null"
+                        }                                           
+                    }
+                }
+            },
+                "humanIds": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "array"
+                        }                                           
+                    }
+                }
+            },
+                "createHumanInArea": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "name": {
+                                "type": "string"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "integer"
+                        }                                           
+                    }
+                }
+            },
+                "animate": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "humanId": {
+                                "type": "integer"
+                        },                                                                                                                
+                        "animationName": {
+                                "type": "string"
+                        },                                                                                                                
+                        "loop": {
+                                "type": "boolean"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                                                                                                           
+                        "result": {
+                                "type": "null"
+                        }                                           
+                    }
+                }
+            },
+                "getLocation": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "humanId": {
+                                "type": "integer"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "object"
+                        }                                           
+                    }
+                }
+            },
+                "isFollowingPath": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "humanId": {
+                                "type": "integer"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "boolean"
+                        }                                           
+                    }
+                }
+            },
+                "moveTowards": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "humanId": {
+                                "type": "integer"
+                        },                                                                                                                
+                        "target": {
+                                "type": "object"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                                                                
+                        "result": {
+                                "type": "null"
+                        }                                           
+                    }
+                }
+            },
+                "stopMoving": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "humanId": {
+                                "type": "integer"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "boolean"
+                        }                                           
+                    }
+                }
+            },
+                "getHumanIdsInRange": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "humanId": {
+                                "type": "integer"
+                        },                                                                                                                
+                        "range": {
+                                "type": "number"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                                                                
+                        "result": {
+                                "type": "array"
+                        }                                           
+                    }
+                }
+            },
+                "positionStreamingAddress": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "string"
+                        }                                           
+                    }
+                }
+            },
+                "humanExists": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "humanId": {
+                                "type": "integer"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "boolean"
+                        }                                           
+                    }
+                }
+            }
+    }
+  },
+  "name" : "HumanAgentService",
+  "status" : "UNKNOWN",
+  "type" : "eventbus-service-proxy"
+
+}

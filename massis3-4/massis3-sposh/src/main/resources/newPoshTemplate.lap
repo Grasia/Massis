@@ -1,0 +1,14 @@
+(
+	(C CRef
+		(elements
+			((CC com.massisframework.massis3.sposh.library.ActionPatternReference($file="file1.lap",$name="AP1")))
+		)
+	)
+	(AP AP1 (ASD com.massisframework.massis3.sposh.library.ActionPatternReference cz.cuni.amis.pogamut.sposh.executor.DoNothing) "Hola")
+
+	(DC life
+		(drives 
+			  ((nothinga (trigger ((cz.cuni.amis.pogamut.sposh.executor.Succeed))) CRef))
+		)
+	)
+)

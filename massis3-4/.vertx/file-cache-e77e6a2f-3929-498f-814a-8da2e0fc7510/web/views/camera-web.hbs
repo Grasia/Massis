@@ -1,0 +1,48 @@
+<html>
+<head>
+<style>
+div.gallery {
+	margin: 5px;
+	border: 1px solid #ccc;
+	float: left;
+	width: 320px;
+}
+
+div.gallery:hover {
+	border: 1px solid #777;
+}
+
+div.gallery img {
+	width: 100%;
+	height: auto;
+}
+
+div.desc {
+	padding: 15px;
+	text-align: center;
+}
+</style>
+</head>
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+	function createImage(description,imageURL) {
+		$("body").append(
+		'<div class="gallery">'+
+		  '<a target="_blank" href="'+imageURL+'">'+
+		    '<img src="'+imageURL+'" alt="'+description+'">'+
+		  '</a>'+
+		  '<div class="desc">'+description+'</div>'+
+		'</div>'
+		);
+	}
+	$( document ).ready(function() {
+		$.getJSON("/api/simulations/{{simId}}/environment/cameraIds", function(data) {
+			for (var i = 0; i < data.result.length; i++) {
+				var camId = data.result[i];
+				createImage('Camera #'+i,'/api/simulations/{{simId}}/environment/camera/' + i + '/video')
+			}
+		});
+	});
+</script>
+</html>

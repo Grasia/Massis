@@ -1,0 +1,14 @@
+{
+  "type" : "object",
+  "properties" : {
+    "gender" : {
+      "type" : "string",
+      "enum" : [ "MALE", "FEMALE" ]
+    },
+    "age" : {
+      "type" : "string",
+      "enum" : [ "CHILD", "TEEN", "NORMAL", "ELDER" ]
+    }
+  },
+  "javaInterfaces" : [ "com.simsilica.es.EntityComponent" ]
+}

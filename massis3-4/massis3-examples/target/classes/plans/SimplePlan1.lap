@@ -1,0 +1,26 @@
+(
+	(C InteractionMatrix
+		(elements
+			((self (trigger ((cz.cuni.amis.pogamut.sposh.executor.Fail))) cz.cuni.amis.pogamut.sposh.executor.DoNothing))
+			((AgentA (trigger ((cz.cuni.amis.pogamut.sposh.executor.Fail))) cz.cuni.amis.pogamut.sposh.executor.DoNothing))
+			((AgentB (trigger ((cz.cuni.amis.pogamut.sposh.executor.Fail))) cz.cuni.amis.pogamut.sposh.executor.DoNothing))
+			((AgentC (trigger ((cz.cuni.amis.pogamut.sposh.executor.Fail))) cz.cuni.amis.pogamut.sposh.executor.DoNothing))
+		)
+	)
+	(C Libholder
+		(elements
+			((moveLib MoveToCoordinatesAP))
+			((Interactionmatrix InteractionMatrix))
+		)
+	)
+	(AP MoveToCoordinatesAP (com.massisframework.massis3.sposh.actions.SetMovementTargetCoordinates com.massisframework.massis3.sposh.actions.Animate com.massisframework.massis3.sposh.actions.MoveToCoordinates))
+
+	(AP OtherAPTest (com.massisframework.massis3.sposh.actions.LogAction($text="BUH_____________") com.massisframework.massis3.sposh.actions.Animate($animation="happy_walk_forward_arc_left0") cz.cuni.amis.pogamut.sposh.executor.DoNothing))
+
+	(DC life
+		(drives 
+			  ((o (trigger ((cz.cuni.amis.pogamut.sposh.executor.Succeed))) com.massisframework.massis3.sposh.actions.PrintActivityPoints))
+			  ((lib (trigger ((cz.cuni.amis.pogamut.sposh.executor.Fail))) Libholder))
+		)
+	)
+)

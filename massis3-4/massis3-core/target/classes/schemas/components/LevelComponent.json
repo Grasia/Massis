@@ -1,0 +1,11 @@
+{
+	"type": "object",
+	"properties": {
+		"levelName": {
+			"type": "string"
+		}
+	},
+	"javaInterfaces": [
+		"com.simsilica.es.EntityComponent"
+	]
+}

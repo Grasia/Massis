@@ -1,0 +1,278 @@
+{
+    "location": {
+        "endpoint": "UNKNOWN"
+    },
+    "metadata": {
+        "service.interface": "com.massisframework.massis3.services.eventbus.sim.EnvironmentService",
+        "actions": {
+                "roomIds": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "array"
+                        }                                           
+                    }
+                }
+            },
+                "allRoomsInfo": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "array"
+                        }                                           
+                    }
+                }
+            },
+                "roomInfo": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "id": {
+                                "type": "integer"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "object"
+                        }                                           
+                    }
+                }
+            },
+                "entitiesNamed": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "name": {
+                                "type": "string"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "array"
+                        }                                           
+                    }
+                }
+            },
+                "entityLocation": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "id": {
+                                "type": "integer"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "object"
+                        }                                           
+                    }
+                }
+            },
+                "time": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "number"
+                        }                                           
+                    }
+                }
+            },
+                "timeStreamAddress": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "string"
+                        }                                           
+                    }
+                }
+            },
+                "sceneName": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "string"
+                        }                                           
+                    }
+                }
+            },
+                "addCamera": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "string"
+                        }                                           
+                    }
+                }
+            },
+                "setCameraLocation": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "camId": {
+                                "type": "string"
+                        },                                                                                                                
+                        "location": {
+                                "type": "object"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                                                                
+                        "result": {
+                                "type": "null"
+                        }                                           
+                    }
+                }
+            },
+                "setCameraRotation": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "camId": {
+                                "type": "string"
+                        },                                                                                                                
+                        "rotation": {
+                                "type": "object"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                                                                
+                        "result": {
+                                "type": "null"
+                        }                                           
+                    }
+                }
+            },
+                "setCameraRotationWithAngles": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "camId": {
+                                "type": "string"
+                        },                                                                                                                
+                        "xAngle": {
+                                "type": "number"
+                        },                                                                                                                
+                        "yAngle": {
+                                "type": "number"
+                        },                                                                                                                
+                        "zAngle": {
+                                "type": "number"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                                                                                                                                                      
+                        "result": {
+                                "type": "null"
+                        }                                           
+                    }
+                }
+            },
+                "cameraIds": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "array"
+                        }                                           
+                    }
+                }
+            },
+                "cameraMapKeyValue": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "camId": {
+                                "type": "string"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "array"
+                        }                                           
+                    }
+                }
+            },
+                "cameraDataStreamEventBusAddress": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "camId": {
+                                "type": "string"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "string"
+                        }                                           
+                    }
+                }
+            }
+    }
+  },
+  "name" : "EnvironmentService",
+  "status" : "UNKNOWN",
+  "type" : "eventbus-service-proxy"
+
+}

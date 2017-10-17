@@ -1,0 +1,39 @@
+(
+	(C Libcompetence
+		(elements
+			((MovementLib Coordinates))
+			((PaperLib TakeLectureAP))
+		)
+	)
+	(C MLib
+		(elements
+			((L MoveToCoordinatesAP))
+		)
+	)
+	(C Coordinates
+		(elements
+			((C1 MoveToCoordinatesAP))
+			((C2 MoveAnimated($walkAnim="walk0")))
+			((C3 MoveToRoom))
+			((StayStillAnimatedC StayStillAnimated))
+		)
+	)
+	
+	(AP MoveToCoordinatesAP vars($walkAnim="walk0") (com.massisframework.massis3.sposh.actions.SetMovementTargetCoordinates($x=75.0,$y=1.0,$z=33.0) MoveAnimated($walkAnim=$walkAnim) com.massisframework.massis3.sposh.actions.MoveToCoordinates cz.cuni.amis.pogamut.sposh.executor.DoNothing))
+
+	(AP MoveAnimated (com.massisframework.massis3.sposh.actions.Animate($animation=$walkAnim) com.massisframework.massis3.sposh.actions.MoveToCoordinates))
+
+	(AP MoveToRoom vars($roomName=nil) (com.massisframework.massis3.sposh.actions.GoToRandomPointInRoom MoveAnimated($walkAnim="walk0")))
+
+	(AP TakeLectureAP vars($classRoomName=nil, $lectureDuration=nil) (MoveToRoom($roomName=$classRoomName)))
+
+	(AP StayStillAnimated vars($animName=nil, $time=nil) (com.massisframework.massis3.sposh.actions.Animate($animation=$animName) com.massisframework.massis3.sposh.actions.StayStill))
+
+	(DC life
+		(drives 
+			  ((GoToLectureRoom (trigger ((cz.cuni.amis.pogamut.sposh.executor.Succeed true ==))) TakeLectureAP($classRoomName="classroom1",$lectureDuration=10)))
+			  ((AttendToLectures (trigger ((cz.cuni.amis.pogamut.sposh.executor.Fail) (cz.cuni.amis.pogamut.sposh.executor.Succeed))) com.massisframework.massis3.sposh.actions.StayStill($time=30)))
+			  ((lib (trigger ((cz.cuni.amis.pogamut.sposh.executor.Fail))) Libcompetence))
+		)
+	)
+)

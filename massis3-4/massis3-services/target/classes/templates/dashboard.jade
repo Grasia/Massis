@@ -1,0 +1,38 @@
+extends layout
+
+block content
+	.row
+		.col-md-12
+			h1.page-header
+				| Dashboard 
+				small Summary
+	//
+	.row
+		+boxinfo1(context.runningSimulations,"Running simulations")
+		+boxinfo1(3993,"Agents")
+		+boxinfo1(273462,"Simulation Events")
+		+boxinfo1(31,"Cameras")
+	.row
+		.col-md-5.col-sm-12.col-xs-12
+			.panel.panel-default
+				.panel-heading
+					| Latest events
+				.panel-body
+					.list-group
+						a.list-group-item(href='#')
+							span.badge 7 minutes ago
+							i.fa.fa-fw.fa-check
+							|  Marlon brando created a simulation
+						a.list-group-item(href='#')
+							span.badge 16 minutes ago
+							i.fa.fa-fw.fa-check
+							|  Jorge wrote a paper
+						a.list-group-item(href='#')
+							span.badge 36 minutes ago
+							i.fa.fa-fw.fa-check
+							|  Rafa hizo algo
+					.text-right
+						a(href='#')
+							| More Tasks 
+							i.fa.fa-arrow-circle-right
+		+linechart1("Simulator stats")

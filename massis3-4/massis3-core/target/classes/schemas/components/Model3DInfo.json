@@ -1,0 +1,11 @@
+{
+	"type": "object",
+	"properties": {
+		"assetReference": {
+			"$ref":"../assets/AssetReference.json"
+		}
+	},
+	"javaInterfaces": [
+		"com.simsilica.es.EntityComponent"
+	]
+}

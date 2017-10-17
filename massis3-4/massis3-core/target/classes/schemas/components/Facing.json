@@ -1,0 +1,21 @@
+{
+	"type": "object",
+	"properties": {
+		"x": {
+			"type": "number"
+		},
+		"y": {
+			"type": "number"
+		},
+		"z": {
+			"type": "number"
+		},
+		"w": {
+			"type": "number"
+		}
+	},
+	"javaInterfaces": [
+		"com.simsilica.es.EntityComponent",
+		"com.massisframework.massis3.commons.spatials.QuaternionHolder"
+	]
+}

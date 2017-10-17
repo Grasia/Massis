@@ -1,0 +1,23 @@
+{
+	"properties": {
+		"position": {
+			"$ref": "http://schemas.massisframework.com/jme3/Vector2f.json"
+		},
+		"velocity": {
+			"$ref": "http://schemas.massisframework.com/jme3/Vector2f.json"
+		},
+		"radius": {
+			"type": "number"
+		},
+		"maxspeed": {
+			"type": "number"
+		},
+		"maxforce": {
+			"type": "number"
+		}
+	},
+	"javaInterfaces": [
+		"com.simsilica.es.EntityComponent"
+	]
+}
+	

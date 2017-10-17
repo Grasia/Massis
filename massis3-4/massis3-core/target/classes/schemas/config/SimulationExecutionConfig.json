@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "simulationId": {
+            "type": "integer",
+            "javaType": "java.lang.Long",
+            "minimum": 0
+        },
+        "sceneFile": {
+            "type": "string"
+        },
+        "assetFolders": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "renderWidth": {
+            "type": "integer",
+            "minimum": 256,
+            "default": "1024"
+        },
+        "renderHeight": {
+            "type": "integer",
+            "minimum": 256,
+            "default": "768"
+        },
+        "debugEnabled": {
+            "type": "boolean",
+            "default": "false"
+        }
+    },
+    "required": [
+        "sceneFile",
+        "assetFolders",
+        "renderMode"
+    ]
+}
+}

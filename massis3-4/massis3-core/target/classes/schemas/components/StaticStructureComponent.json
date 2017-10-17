@@ -1,0 +1,4 @@
+{
+  "type" : "object",
+  "javaInterfaces" : [ "com.simsilica.es.EntityComponent" ]
+}

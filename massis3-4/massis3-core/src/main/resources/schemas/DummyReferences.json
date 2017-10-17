@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "DummyReferences",
+    "description": "Schema for generating remote schema classes",
+    "type": "object",
+    "properties": {
+        "PositionUpdate": {
+            "$ref": "http://schemas.massisframework.com/massis3/stream/PositionUpdate.json"
+        },
+        "SceneRoom": {
+            "$ref": "http://schemas.massisframework.com/massis3/scene/SceneRoom.json"
+        },
+        "LongList": {
+            "$ref": "http://schemas.massisframework.com/massis3/basic/JsonLongArray.json"
+        }
+    }
+}

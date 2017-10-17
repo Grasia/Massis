@@ -1,0 +1,72 @@
+{\n
+    "location": {\n
+        "endpoint": "UNKNOWN"\n
+    },\n
+    "metadata": {\n
+        "service.interface": "@{ifaceFQCN}",\n
+        "actions": {\n@foreach{method:methods}@if{!method.staticMethod}
+                "@{method.name}": {\n
+                "parameters": {\n
+                    "type": "object",\n
+                    "properties": {
+                      @code{count=0}
+                      @foreach{param: method.params}
+                       @if{param.type.kind != CLASS_HANDLER}
+                       \n
+                        "@{param.name}": {\n
+                                "type":
+@if{param.type.name == 'byte' || param.type.name == 'java.lang.Byte'} "integer"
+@else{param.type.name == 'short' || param.type.name == 'java.lang.Short'} "integer"
+@else{param.type.name == 'int' || param.type.name == 'java.lang.Integer'} "integer"
+@else{param.type.name == 'long' || param.type.name == 'java.lang.Long'} "integer"
+@else{param.type.name == 'float' || param.type.name == 'java.lang.Float'} "number"
+@else{param.type.name == 'double' || param.type.name == 'java.lang.Double'} "number"
+@else{param.type.name == 'boolean' || param.type.name == 'java.lang.Boolean'} "boolean"
+@else{param.type.name == 'char' || param.type.name == 'java.lang.Character'} "ERROR"
+@else{param.type.kind == CLASS_STRING} "string"
+@else{param.type.kind == CLASS_JSON_OBJECT} "object"
+@else{param.type.kind == CLASS_JSON_ARRAY} "array"
+@else{param.type.kind == CLASS_DATA_OBJECT} "object"
+@end{}\n                        }@if{(count != method.params.size() - 2)},@end{}
+                       @end{}
+                       @code{count++}
+                    @end{}\n
+                    }\n
+                },\n
+@comment{=============================================================}
+                "returns": {\n
+                    "type": "object",\n
+                    "properties": {
+                      @code{count=0}
+                      @foreach{param: method.params}
+                       @if{param.type.kind == CLASS_HANDLER}@code{rType=param.type.args[0].args[0]}
+                       \n
+                        "result": {\n
+                                "type":
+@if{rType.name == 'byte' || rType.name == 'java.lang.Byte'} "integer"
+@else{rType.name == 'short' || rType.name == 'java.lang.Short'} "integer"
+@else{rType.name == 'int' || rType.name == 'java.lang.Integer'} "integer"
+@else{rType.name == 'long' || rType.name == 'java.lang.Long'} "integer"
+@else{rType.name == 'float' || rType.name == 'java.lang.Float'} "number"
+@else{rType.name == 'double' || rType.name == 'java.lang.Double'} "number"
+@else{rType.name == 'boolean' || rType.name == 'java.lang.Boolean'} "boolean"
+@else{rType.name == 'char' || rType.name == 'java.lang.Character'} "ERROR"
+@else{rType.kind == CLASS_STRING} "string"
+@else{rType.kind == CLASS_JSON_OBJECT} "object"
+@else{rType.kind == CLASS_JSON_ARRAY} "array"
+@else{rType.kind == CLASS_DATA_OBJECT} "object"
+@else{rType.kind == CLASS_VOID || rType.name == 'java.lang.Void' || rType.name == 'void'} "null"
+@end{}\n                        }
+                       @end{}
+                    @end{}\n
+                    }\n
+                }\n
+@comment{=============================================================}
+            }@end{}@end{',\n'}\n
+    }\n
+  },\n
+  "name" : "@{ifaceSimpleName}",\n
+  "status" : "UNKNOWN",\n
+  "type" : "eventbus-service-proxy"\n
+\n
+}

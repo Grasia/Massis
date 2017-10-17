@@ -1,0 +1,15 @@
+{
+	"httpServerConfig": {
+		"host": "127.0.0.1",
+		"port": 8082
+	},
+	"authPropertiesFile": "/home/mcardenas/git-projects/massis3-4/massis3-examples/src/main/resources/webauth.properties",
+	"assetFolders": [
+		"/home/mcardenas/git-projects/massis3-assets/Scenes",
+		"/home/mcardenas/git-projects/massis3-assets/models",
+		"/home/mcardenas/git-projects/massis3-assets/animations"
+	],
+	"instances": 1,
+	"renderMode": "SERVER",
+	"rendererType": "LWJGL-OpenGL3"
+}

@@ -1,0 +1,23 @@
+{
+	"type": "object",
+	"properties": {
+		"geometryMaterials": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"geometryName": {
+						"type": "string"
+					},
+					"type":{
+						"$ref":"../assets/AssetReference.json"
+					}
+				}
+			}
+		},
+		"type": {"$ref":"../assets/AssetType.json"		}
+	},
+	"javaInterfaces": [
+		"com.simsilica.es.EntityComponent"
+	]
+}

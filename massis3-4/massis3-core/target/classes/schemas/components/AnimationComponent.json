@@ -1,0 +1,11 @@
+{
+	"type": "object",
+	"properties": {
+		"animationName": {
+			"type": "string"
+		}
+	},
+	"javaInterfaces": [
+		"com.simsilica.es.EntityComponent"
+	]
+}

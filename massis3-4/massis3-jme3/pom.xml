@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.massisframework.massis3.jme3</groupId>
+	<artifactId>massis3-jme3</artifactId>
+	<parent>
+		<groupId>com.massisframework.massis3</groupId>
+		<artifactId>massis3</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<jme.version>3.1.0-stable</jme.version>
+		<zay-es.version>1.2.1</zay-es.version>
+		<jfx.version>2.184.2016-04-30_145140-ccbd413</jfx.version>
+	</properties>
+	<dependencies>
+		<!-- JME3 -->
+		<dependency>
+			<groupId>org.jmonkeyengine</groupId>
+			<artifactId>jme3-core</artifactId>
+			<version>${jme.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jmonkeyengine</groupId>
+			<artifactId>jme3-desktop</artifactId>
+			<version>${jme.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jmonkeyengine</groupId>
+			<artifactId>jme3-blender</artifactId>
+			<version>${jme.version}</version>
+		</dependency>
+		<!-- If lwjgl3 has issues, replace with lwjgl  -->
+		<dependency>
+			<groupId>org.jmonkeyengine</groupId>
+			<artifactId>jme3-lwjgl3</artifactId>
+			<version>${jme.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jmonkeyengine</groupId>
+			<artifactId>jme3-jogl</artifactId>
+			<version>${jme.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jmonkeyengine</groupId>
+			<artifactId>jme3-bullet-native</artifactId>
+			<version>${jme.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jmonkeyengine</groupId>
+			<artifactId>jme3-bullet</artifactId>
+			<version>${jme.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jmonkeyengine</groupId>
+			<artifactId>jme3-plugins</artifactId>
+			<version>${jme.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jmonkeyengine</groupId>
+			<artifactId>jme3-networking</artifactId>
+			<version>${jme.version}</version>
+		</dependency>
+		<!-- Zay - ES -->
+		<dependency>
+			<groupId>com.simsilica</groupId>
+			<artifactId>zay-es</artifactId>
+			<version>${zay-es.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.simsilica</groupId>
+			<artifactId>zay-es-net</artifactId>
+			<version>${zay-es.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jme3x</groupId>
+			<artifactId>jfx</artifactId>
+			<version>${jfx.version}</version>
+		</dependency>
+		<!-- /Zay - ES -->
+	</dependencies>
+</project>

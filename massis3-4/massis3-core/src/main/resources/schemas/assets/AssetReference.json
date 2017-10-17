@@ -1,0 +1,9 @@
+{
+	"type": "object",
+	"properties": {
+		"assetType": {"$ref":"AssetType.json"},
+		"key": {
+			"type": "string"
+		}
+	}
+}

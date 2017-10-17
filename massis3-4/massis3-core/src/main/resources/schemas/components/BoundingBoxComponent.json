@@ -1,0 +1,7 @@
+{
+  "type" : "object",
+  "properties" : {
+    "boundingBox" : { "$ref":"http://schemas.massisframework.com/jme3/BoundingBox.json" }
+  },
+  "javaInterfaces" : [ "com.simsilica.es.EntityComponent" ]
+}

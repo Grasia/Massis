@@ -1,0 +1,14 @@
+{
+	"type": "object",
+	"properties": {
+		"path": {
+			"type": "array",
+			"items": {
+				"$ref": "http://schemas.massisframework.com/jme3/Vector3f.json"
+			}
+		}
+	},
+	"javaInterfaces": [
+		"com.simsilica.es.EntityComponent"
+	]
+}

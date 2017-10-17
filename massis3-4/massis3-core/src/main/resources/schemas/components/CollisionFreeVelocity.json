@@ -1,0 +1,12 @@
+{
+  "type" : "object",
+  "properties" : {
+    "x" : {
+      "type" : "number"
+    },
+    "z" : {
+      "type" : "number"
+    }
+  },
+  "javaInterfaces" : [ "com.simsilica.es.EntityComponent" ]
+}

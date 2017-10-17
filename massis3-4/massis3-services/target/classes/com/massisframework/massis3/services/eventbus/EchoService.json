@@ -1,0 +1,188 @@
+{
+    "location": {
+        "endpoint": "UNKNOWN"
+    },
+    "metadata": {
+        "service.interface": "com.massisframework.massis3.services.eventbus.EchoService",
+        "actions": {
+                "echoString": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "message": {
+                                "type": "string"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "string"
+                        }                                           
+                    }
+                }
+            },
+                "echoInteger": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "message": {
+                                "type": "integer"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "integer"
+                        }                                           
+                    }
+                }
+            },
+                "echoJsonObject": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "message": {
+                                "type": "object"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "object"
+                        }                                           
+                    }
+                }
+            },
+                "echoJsonArray": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "message": {
+                                "type": "array"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                     
+                        "result": {
+                                "type": "array"
+                        }                                           
+                    }
+                }
+            },
+                "echoVoidNoParams": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "null"
+                        }                                           
+                    }
+                }
+            },
+                "echoVoidWithParams": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "a": {
+                                "type": "string"
+                        },                                                                                                                
+                        "b": {
+                                "type": "string"
+                        },                                                                                                                
+                        "c": {
+                                "type": "integer"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                                                                                                           
+                        "result": {
+                                "type": "null"
+                        }                                           
+                    }
+                }
+            },
+                "echoCanFail": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "fail": {
+                                "type": "boolean"
+                        },                                                                                                                
+                        "errMessage": {
+                                "type": "string"
+                        }                                                                                                                                    
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                                                                                                                
+                        "result": {
+                                "type": "boolean"
+                        }                                           
+                    }
+                }
+            },
+                "echoException": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "null"
+                        }                                           
+                    }
+                }
+            },
+                "echoCounterStreamAddress": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                                                                                              
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                                                                          
+                        "result": {
+                                "type": "string"
+                        }                                           
+                    }
+                }
+            },
+                "close": {
+                "parameters": {
+                    "type": "object",
+                    "properties": {                                            
+                    }
+                },
+                "returns": {
+                    "type": "object",
+                    "properties": {                                            
+                    }
+                }
+            }
+    }
+  },
+  "name" : "EchoService",
+  "status" : "UNKNOWN",
+  "type" : "eventbus-service-proxy"
+
+}

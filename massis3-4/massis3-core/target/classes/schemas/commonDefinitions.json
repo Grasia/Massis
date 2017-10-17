@@ -1,0 +1,64 @@
+{
+	"Vector3f": {
+		"type": "object",
+		"javaType": "com.jme3.math.Vector3f",
+		"id": "com:jme3:math:Vector3f",
+		"properties": {
+			"x": {
+				"type": "number"
+			},
+			"y": {
+				"type": "number"
+			},
+			"z": {
+				"type": "number"
+			}
+		}
+	},
+	"Vector2f": {
+		"type": "object",
+		"javaType": "com.jme3.math.Vector2f",
+		"id": "com:jme3:math:Vector2f",
+		"properties": {
+			"x": {
+				"type": "number"
+			},
+			"y": {
+				"type": "number"
+			}
+		}
+	},
+	"Quaternion": {
+		"type": "object",
+		"javaType": "com.jme3.math.Quaternion",
+		"properties": {
+			"x": {
+				"type": "number"
+			},
+			"y": {
+				"type": "number"
+			},
+			"z": {
+				"type": "number"
+			},
+			"w": {
+				"type": "number"
+			}
+		}
+	},
+	
+	"EntityId": {
+		"type": "object",
+		"javaType": "com.simsilica.es.EntityId",
+		"properties": {
+			"id": {
+				"type": "integer",
+				"javaType": "java.lang.Long"
+			}
+		}
+	},	
+	"Class": {
+		"type": "string",
+		"javaType": "java.lang.Class"
+	}
+}

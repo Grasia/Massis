@@ -1,0 +1,31 @@
+# Written by MakeHuman 1.1.0
+version v1.1.0
+tags female-casual1
+camera 3.5 354.0 0.122146736618 1.0 0.482172643776 1.225
+modifier breast/breast-trans-down|up 1.000000
+modifier macrodetails-universal/Muscle 0.211000
+modifier macrodetails/African 0.000000
+modifier macrodetails-proportions/BodyProportions 0.452000
+modifier macrodetails/Gender 0.090000
+modifier macrodetails-height/Height 0.387000
+modifier breast/BreastSize 0.739000
+modifier macrodetails/Age 0.518000
+modifier breast/BreastFirmness 0.668000
+modifier macrodetails/Asian 0.000000
+modifier head/head-fat-decr|incr -0.066000
+modifier head/head-age-decr|incr -0.758000
+modifier macrodetails/Caucasian 1.000000
+modifier breast/breast-dist-decr|incr -0.176000
+modifier macrodetails-universal/Weight 0.276000
+proxy female1605 e7cb8171-845e-42b0-a109-e6e8c8a61f9d
+hair ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde
+skeleton cmu_mb.mhskel
+eyes Low-Poly 1cc97a30-85a1-42e6-a9f7-b3e753732baa
+clothes shoes05 8ef14ff4-8547-419c-a495-17bab919568b
+clothes shoes03 ad622a26-da1e-4e3c-9f8e-454edf10d504
+clothes female_sportsuit01 e38d3a5b-718f-41d5-8404-299def30b43f
+clothesHideFaces False
+skinMaterial skins/young_caucasian_female/young_caucasian_female_special_suit.mhmat
+material ponytail01 44e0340e-c7a6-4d22-814c-0632968d2dde ponytail01.mhmat
+material Low-Poly 1cc97a30-85a1-42e6-a9f7-b3e753732baa eyes/materials/brown.mhmat
+subdivide False
